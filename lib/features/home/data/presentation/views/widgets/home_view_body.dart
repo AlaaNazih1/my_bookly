@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:my_bookly/core/utils/assets.dart';
+import 'package:my_bookly/features/home/data/presentation/views/widgets/custom_app_bar.dart';
+import 'package:my_bookly/features/home/data/presentation/views/widgets/custom_list_view_item.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -10,31 +10,11 @@ class HomeViewBody extends StatelessWidget {
     return Column(
       children: [
         const CustomAppBar(),
+        const SizedBox(height: 50),
+
+        const CustomListViewItem(),
       ],
     );
   }
 }
 
-
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0,vertical: 40),
-      child: Row(
-        children: [
-          Image.asset(AssetsData.logo,height: 18,),
-          const Spacer(),
-          IconButton(onPressed: (){},
-           icon: const FaIcon(
-              FontAwesomeIcons.magnifyingGlass,
-              size: 24.0, 
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
