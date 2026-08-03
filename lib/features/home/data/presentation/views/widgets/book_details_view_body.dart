@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_bookly/core/utils/styles.dart';
+import 'package:my_bookly/features/home/data/presentation/views/widgets/SimilarBooksListView.dart';
 import 'package:my_bookly/features/home/data/presentation/views/widgets/book_rating.dart';
 import 'package:my_bookly/features/home/data/presentation/views/widgets/books_action.dart';
 import 'package:my_bookly/features/home/data/presentation/views/widgets/custom_details_app_bar.dart';
@@ -14,6 +15,7 @@ class BookDetailsViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Column(
+
         children: [
           const CustomDetailsAppBar(),
           Padding(
@@ -40,6 +42,14 @@ class BookDetailsViewBody extends StatelessWidget {
           ),
           const SizedBox(height: 37),
           const BooksAction(),
+          const SizedBox(height: 50),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text('You can also like', style: Styles.textStyle14),
+          ),
+          const SizedBox(height: 16),
+          const SimilarBooksListView(),
+          const SizedBox(height: 40),
         ],
       ),
     );
