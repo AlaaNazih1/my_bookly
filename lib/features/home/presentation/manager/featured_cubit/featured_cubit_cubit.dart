@@ -6,7 +6,7 @@ import 'package:my_bookly/features/home/data/repos/home_repo.dart';
 part 'featured_cubit_state.dart';
 
 class FeaturedCubitCubit extends Cubit<FeaturedCubitState> {
-  FeaturedCubitCubit(this.homeRepo) : super(FeaturedCubitInitial());
+  FeaturedCubitCubit(this.homeRepo, ) : super(FeaturedCubitInitial());
 
   final HomeRepo homeRepo;
 
