@@ -15,8 +15,8 @@ class FeaturedCubitSuccess extends FeaturedCubitState {
 }
 
 class FeaturedCubitFailure extends FeaturedCubitState {
-  final String errMessage;
-  const FeaturedCubitFailure(this.errMessage);
+  final String errorMessage;
+  const FeaturedCubitFailure(this.errorMessage);
 }
 
 class FeaturedCubitLoading extends FeaturedCubitState {}
