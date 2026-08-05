@@ -9,6 +9,7 @@ import 'package:my_bookly/features/home/presentation/manager/featured_cubit/feat
 import 'package:my_bookly/features/home/presentation/manager/newset_books_cubit/newset_books_cubit_cubit.dart';
 
 void main() {
+  setupServiceLocator();
   runApp(const BooklyApp());
 }
 
