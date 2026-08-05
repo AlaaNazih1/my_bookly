@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_bookly/core/utils/styles.dart';
-import 'package:my_bookly/features/home/data/presentation/views/widgets/serach_result_list_view.dart';
+import 'package:my_bookly/features/home/presentation/views/widgets/serach_result_list_view.dart';
 import 'package:my_bookly/features/search/data/presentation/views/widgets/custom_text_filed.dart';
 
 class SerachViewBody extends StatelessWidget {

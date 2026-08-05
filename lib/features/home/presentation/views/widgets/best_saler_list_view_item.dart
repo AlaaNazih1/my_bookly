@@ -4,7 +4,7 @@ import 'package:my_bookly/constant.dart';
 import 'package:my_bookly/core/utils/app_router.dart';
 import 'package:my_bookly/core/utils/assets.dart';
 import 'package:my_bookly/core/utils/styles.dart';
-import 'package:my_bookly/features/home/data/presentation/views/widgets/book_rating.dart';
+import 'package:my_bookly/features/home/presentation/views/widgets/book_rating.dart';
 
 class BestsalerListViewItem extends StatelessWidget {
   const BestsalerListViewItem({super.key});
