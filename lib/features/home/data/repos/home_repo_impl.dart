@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:my_bookly/core/errors/failure.dart';
 import 'package:my_bookly/core/utils/api_service.dart';
 import 'package:my_bookly/features/home/data/models/book_model/book_model.dart';
@@ -20,13 +21,15 @@ class HomeRepoImpl implements HomeRepo {
       }
       return right(books);
     } on Exception catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
     }
   }
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
     throw UnimplementedError();
   }
 }
