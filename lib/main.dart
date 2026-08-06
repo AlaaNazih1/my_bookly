@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_bookly/constant.dart';
 import 'package:my_bookly/core/utils/app_router.dart';
@@ -8,8 +9,10 @@ import 'package:my_bookly/features/home/data/repos/home_repo_impl.dart';
 import 'package:my_bookly/features/home/presentation/manager/featured_cubit/featured_cubit_cubit.dart';
 import 'package:my_bookly/features/home/presentation/manager/newset_books_cubit/newset_books_cubit_cubit.dart';
 
-void main() {
+Future<void> main() async {
+   WidgetsFlutterBinding.ensureInitialized();
   setupServiceLocator();
+  await dotenv.load(fileName: ".env");
   runApp(const BooklyApp());
 }
 
@@ -24,7 +27,7 @@ class BooklyApp extends StatelessWidget {
           create: (context) =>
               FeaturedCubitCubit(
                getIt.get<HomeRepoImpl>(),
-                    ),
+                    )..fetchFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) =>
