@@ -6,17 +6,22 @@ class SerachResultListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ListView.builder(
+    return ListView.builder(
       padding: EdgeInsets.zero,
       itemCount: 10,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0),
+
+          // child: const BooksListViewItem(
+          //   bookModel: BookModel(),
+          // ),
+          child: Text(
+            'Harry Potter and the Goblet of Fire',
           
-          child: const BestsalerListViewItem(),
+          ),
         );
       },
     );
-    
   }
 }

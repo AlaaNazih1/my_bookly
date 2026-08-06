@@ -33,7 +33,7 @@ class BooklyApp extends StatelessWidget {
           create: (context) =>
               NewsetBooksCubitCubit(
                 getIt.get<HomeRepoImpl>(),
-                    ),
+                    )..fetchNewsetBooks(),
         ),
       ],
       child: MaterialApp.router(
