@@ -17,11 +17,13 @@ class FeatuedBooksListView extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.3,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: 10,
+              itemCount: state.featuredBooks.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: const CustomBookItem(),
+                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                  child:  CustomBookItem(
+                    imageUrl: state.featuredBooks[index].volumeInfo.imageLinks?.thumbnail ?? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCmbaowVUkDY7hFdcvqTojzzA2sDXUn911p_MqhEMCryVTCYcWMG1jFS4&s',
+                  ),
                 );
               },
             ),
